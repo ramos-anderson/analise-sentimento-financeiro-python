@@ -1,0 +1,8 @@
+pandas
+yfinance
+beautifulsoup4
+textblob
+selenium
+webdriver-manager
+matplotlib
+notebook # para o jupyter
