@@ -18,14 +18,11 @@ O diferencial deste projeto é a autonomia na criação do dataset e a implement
 O fluxo de trabalho foi estruturado em quatro etapas principais:
 
 1.  **Coleta de Dados de Preços (Yahoo Finance):** Utilização da biblioteca `yfinance` para baixar o histórico de cotações da MGLU3.SA.
-
 2.  **Web Scraping Robusto de Notícias (Investing.com):**
     *   Implementação de um scraper com **Selenium** e **BeautifulSoup** para extrair manchetes e datas de notícias do portal Investing.com.
     *   **Técnicas Avançadas:** O script utiliza `webdriver-manager` para a gestão automática do ChromeDriver e emprega técnicas de **camuflagem** de *user-agent* para simular um navegador humano, superando mecanismos de proteção anti-bot.
-
 3.  **Análise de Sentimento (NLP com TextBlob):**
     *   Cada manchete coletada é processada. A biblioteca `TextBlob` é usada para calcular a **polaridade do sentimento** (de -1.0 para negativo a +1.0 para positivo).
-
 4.  **Análise e Visualização (Pandas & Matplotlib):**
     *   As pontuações de sentimento são agregadas por dia (média diária) e combinadas com o histórico de preços.
     *   Um gráfico final com dois eixos Y é gerado para visualizar o preço de fechamento e o sentimento médio diário em um único cronograma.
@@ -34,38 +31,36 @@ O fluxo de trabalho foi estruturado em quatro etapas principais:
 
 ## 🛠️ Tecnologias Utilizadas
 
-*   **Linguagem:** Python
+*   **Linguagem:** `Python`
 *   **Web Scraping:** `Selenium`, `BeautifulSoup4`, `webdriver-manager`
-*   **Análise de Dados:** `Pandas`, `NumPy`
-*   **NLP:** `TextBlob`
+*   **Análise de Dados & NLP:** `Pandas`, `NumPy`, `TextBlob`
 *   **Dados Financeiros:** `yfinance`
 *   **Visualização:** `Matplotlib`
-*   **Ambiente:** Jupyter Notebook (VS Code)
+*   **Ambiente:** Jupyter Notebook
 
 ---
 
 ## ⚙️ Como Executar o Projeto
 
-**1. Pré-requisitos:**
-*   Python 3.9+ e Google Chrome instalados.
+Siga os passos abaixo no seu terminal para configurar e rodar o projeto.
 
-**2. Clone o repositório:**
 ```bash
-git clone https://github.com/ramos-anderson/analise-sentimento-financeiro.git
-cd analise-sentimento-financeiro
+# 1. Pré-requisitos:
+#    Certifique-se de que você tem o Python 3.9+ e o Google Chrome instalados.
 
-3. Crie o ambiente virtual e instale as dependências:
-code
-Bash
-# Crie e ative o ambiente virtual
+# 2. Clone o repositório:
+git clone https://github.com/ramos-anderson/analise-sentimento-financeiro-python.git
+cd analise-sentimento-financeiro-python
+
+# 3. Crie o ambiente virtual e instale as dependências:
+#    (Exemplo para Windows)
 python -m venv venv
-venv\Scripts\activate
-
-# Instale as bibliotecas
+.\venv\Scripts\activate
 pip install -r requirements.txt
-4. Baixe os corpus da TextBlob (apenas na primeira vez):
-code
-Bash
+
+# 4. Baixe os corpus da TextBlob (apenas na primeira vez):
 python -m textblob.download_corpora
-5. Abra e Execute o Notebook:
-Abra o arquivo analise_sentimento.ipynb em um ambiente Jupyter. Execute as células em ordem. A célula de scraping pode levar alguns segundos para rodar, pois irá iniciar uma instância do Chrome.
+
+# 5. Abra e Execute o Notebook:
+#    Abra o arquivo 'analise_sentimento.ipynb' no seu ambiente Jupyter (como o VS Code) 
+#    e execute as células em ordem. A célula de scraping pode levar alguns segundos.
